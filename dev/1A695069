@@ -1,0 +1,72 @@
+name CY7C1312AV18
+irsize 3
+bssize 107
+sample 100
+extest 000
+bsc[0] C_n I
+bsc[1] C I
+bsc[2] A0 I
+bsc[3] A1 I
+bsc[4] A2 I
+bsc[5] A3 I
+bsc[6] A4 I
+bsc[7] A5 I
+bsc[8] A6 I
+bsc[9] Q0 Z0 47
+bsc[10] D0 I
+bsc[13] Q1 Z0 47
+bsc[14] D1 I
+bsc[17] Q2 Z0 47
+bsc[18] D2 I
+bsc[21] Q3 Z0 47
+bsc[22] D3 I
+bsc[25] Q4 Z0 47
+bsc[26] D4 I
+bsc[27] ZQ I
+bsc[30] Q5 Z0 47
+bsc[31] D5 I
+bsc[34] Q6 Z0 47
+bsc[35] D6 I
+bsc[38] Q7 Z0 47
+bsc[39] D7 I
+bsc[42] Q8 Z0 47
+bsc[43] D8 I
+bsc[46] CQ O
+bsc[48] A7 I
+bsc[49] A8 I
+bsc[50] A9 I
+bsc[51] A10 I
+bsc[52] RPS_n I
+bsc[54] BW0_n I
+bsc[55] K I
+bsc[56] K_n I
+bsc[58] BW1_n I
+bsc[59] WPS_n I
+bsc[60] A11 I
+bsc[61] A12 I
+bsc[63] DOFF I
+bsc[64] CQ_n O
+bsc[65] Q9 Z0 47
+bsc[66] D9 I
+bsc[69] Q10 Z0 47
+bsc[70] D10 I
+bsc[73] Q11 Z0 47
+bsc[74] D11 I
+bsc[77] Q12 Z0 47
+bsc[78] D12 I
+bsc[81] Q13 Z0 47
+bsc[82] D13 I
+bsc[85] Q14 Z0 47
+bsc[86] D14 I
+bsc[89] Q15 Z0 47
+bsc[90] D15 I
+bsc[93] Q16 Z0 47
+bsc[94] D16 I
+bsc[97] Q17 Z0 47
+bsc[98] D17 I
+bsc[101] A13 I
+bsc[102] A14 I
+bsc[103] A15 I
+bsc[104] A16 I
+bsc[105] A17 I
+bsc[106] A18 I

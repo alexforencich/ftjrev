@@ -1,0 +1,22 @@
+Most of the fields are self-explanatory except the boundary scan cells.
+
+Each cell is either a `bsc[N]' or `ext[N]'. `External' means that those
+cells should not be set to drivers during operation, as they will drive
+some logic that is not under JTAG control and which might be upset at
+this (e.g. a PCI bus).
+
+The format for this line is
+{bsc|ext}[<index>] <name> <type>[<zval> <zindex>]
+
+<name> is the name of the pin. <type> is I, O, Y or Z, where I is input,
+O is output, Y is 3-state output and Z is bidirectional.
+
+If a pin is Y or Z, it will have <zval> and <zindex>. <zindex> is the
+index of a boundary scan cell that tristates this output cell, and <zval>
+is the value that has to be written in there to tristate it.
+
+Each file is named with the full 32-bit IDCODE field of its chip. The
+tools will print this out, so don't worry about getting it right from
+the specs/BSDLs.
+
+Stan

@@ -1,0 +1,368 @@
+name XC2S50-FG256
+irsize 5
+bssize 590
+sample 00001
+extest 00000
+bsc[1] IO_B13 Y1 0
+bsc[2] IO_B13 I
+bsc[4] IO_C13 Y1 3
+bsc[5] IO_C13 I
+bsc[7] IO_C12 Y1 6
+bsc[8] IO_C12 I
+bsc[10] IO_A14 Y1 9
+bsc[11] IO_A14 I
+bsc[13] IO_D12 Y1 12
+bsc[14] IO_D12 I
+bsc[16] IO_B12 Y1 15
+bsc[17] IO_B12 I
+bsc[19] IO_C11 Y1 18
+bsc[20] IO_C11 I
+bsc[22] IO_A13 Y1 21
+bsc[23] IO_A13 I
+bsc[25] IO_D11 Y1 24
+bsc[26] IO_D11 I
+bsc[28] IO_A12 Y1 27
+bsc[29] IO_A12 I
+bsc[31] IO_E11 Y1 30
+bsc[32] IO_E11 I
+bsc[34] IO_B11 Y1 33
+bsc[35] IO_B11 I
+bsc[37] IO_A11 Y1 36
+bsc[38] IO_A11 I
+bsc[40] IO_C10 Y1 39
+bsc[41] IO_C10 I
+bsc[46] IO_B10 Y1 45
+bsc[47] IO_B10 I
+bsc[49] IO_D10 Y1 48
+bsc[50] IO_D10 I
+bsc[52] IO_A10 Y1 51
+bsc[53] IO_A10 I
+bsc[55] IO_B9 Y1 54
+bsc[56] IO_B9 I
+bsc[58] IO_E10 Y1 57
+bsc[59] IO_E10 I
+bsc[61] IO_A9 Y1 60
+bsc[62] IO_A9 I
+bsc[64] IO_D9 Y1 63
+bsc[65] IO_D9 I
+bsc[67] IO_A8 Y1 66
+bsc[68] IO_A8 I
+bsc[72] GCK2_C9 I
+bsc[73] GCK3_B8 I
+bsc[81] IO_A7 Y1 80
+bsc[82] IO_A7 I
+bsc[84] IO_D8 Y1 83
+bsc[85] IO_D8 I
+bsc[87] IO_A6 Y1 86
+bsc[88] IO_A6 I
+bsc[90] IO_B7 Y1 89
+bsc[91] IO_B7 I
+bsc[93] IO_C8 Y1 92
+bsc[94] IO_C8 I
+bsc[96] IO_D7 Y1 95
+bsc[97] IO_D7 I
+bsc[99] IO_E7 Y1 98
+bsc[100] IO_E7 I
+bsc[105] IO_C7 Y1 104
+bsc[106] IO_C7 I
+bsc[108] IO_B6 Y1 107
+bsc[109] IO_B6 I
+bsc[111] IO_A5 Y1 110
+bsc[112] IO_A5 I
+bsc[114] IO_C6 Y1 113
+bsc[115] IO_C6 I
+bsc[117] IO_B5 Y1 116
+bsc[118] IO_B5 I
+bsc[120] IO_D6 Y1 119
+bsc[121] IO_D6 I
+bsc[123] IO_A4 Y1 122
+bsc[124] IO_A4 I
+bsc[126] IO_B4 Y1 125
+bsc[127] IO_B4 I
+bsc[129] IO_E6 Y1 128
+bsc[130] IO_E6 I
+bsc[132] IO_D5 Y1 131
+bsc[133] IO_D5 I
+bsc[135] IO_A3 Y1 134
+bsc[136] IO_A3 I
+bsc[138] IO_C5 Y1 137
+bsc[139] IO_C5 I
+bsc[141] IO_B3 Y1 140
+bsc[142] IO_B3 I
+bsc[150] IO_C2 Y1 149
+bsc[151] IO_C2 I
+bsc[153] IO_A2 Y1 152
+bsc[154] IO_A2 I
+bsc[156] IO_B1 Y1 155
+bsc[157] IO_B1 I
+bsc[159] IO_E3 Y1 158
+bsc[160] IO_E3 I
+bsc[162] IO_D2 Y1 161
+bsc[163] IO_D2 I
+bsc[165] IO_C1 Y1 164
+bsc[166] IO_C1 I
+bsc[168] IO_F3 Y1 167
+bsc[169] IO_F3 I
+bsc[171] IO_E2 Y1 170
+bsc[172] IO_E2 I
+bsc[174] IO_E4 Y1 173
+bsc[175] IO_E4 I
+bsc[177] IO_D1 Y1 176
+bsc[178] IO_D1 I
+bsc[180] IO_E1 Y1 179
+bsc[181] IO_E1 I
+bsc[183] IO_F2 Y1 182
+bsc[184] IO_F2 I
+bsc[186] IO_G3 Y1 185
+bsc[187] IO_G3 I
+bsc[189] IO_F1 Y1 188
+bsc[190] IO_F1 I
+bsc[192] IO_F4 Y1 191
+bsc[193] IO_F4 I
+bsc[195] IO_F5 Y1 194
+bsc[196] IO_F5 I
+bsc[198] IO_G2 Y1 197
+bsc[199] IO_G2 I
+bsc[201] IO_H3 Y1 200
+bsc[202] IO_H3 I
+bsc[204] IO_G4 Y1 203
+bsc[205] IO_G4 I
+bsc[207] IO_H2 Y1 206
+bsc[208] IO_H2 I
+bsc[210] IO_G5 Y1 209
+bsc[211] IO_G5 I
+bsc[213] IO_H4 Y1 212
+bsc[214] IO_H4 I
+bsc[216] IO_G1 Y1 215
+bsc[217] IO_G1 I
+bsc[219] IO_J2 Y1 218
+bsc[220] IO_J2 I
+bsc[225] IO_H1 Y1 224
+bsc[226] IO_H1 I
+bsc[228] IO_J4 Y1 227
+bsc[229] IO_J4 I
+bsc[231] IO_J1 Y1 230
+bsc[232] IO_J1 I
+bsc[234] IO_J3 Y1 233
+bsc[235] IO_J3 I
+bsc[237] IO_K5 Y1 236
+bsc[238] IO_K5 I
+bsc[240] IO_K2 Y1 239
+bsc[241] IO_K2 I
+bsc[243] IO_K1 Y1 242
+bsc[244] IO_K1 I
+bsc[246] IO_K3 Y1 245
+bsc[247] IO_K3 I
+bsc[249] IO_L1 Y1 248
+bsc[250] IO_L1 I
+bsc[252] IO_L2 Y1 251
+bsc[253] IO_L2 I
+bsc[255] IO_K4 Y1 254
+bsc[256] IO_K4 I
+bsc[258] IO_M1 Y1 257
+bsc[259] IO_M1 I
+bsc[261] IO_L4 Y1 260
+bsc[262] IO_L4 I
+bsc[264] IO_M2 Y1 263
+bsc[265] IO_M2 I
+bsc[267] IO_L3 Y1 266
+bsc[268] IO_L3 I
+bsc[270] IO_N1 Y1 269
+bsc[271] IO_N1 I
+bsc[273] IO_P1 Y1 272
+bsc[274] IO_P1 I
+bsc[276] IO_L5 Y1 275
+bsc[277] IO_L5 I
+bsc[279] IO_N2 Y1 278
+bsc[280] IO_N2 I
+bsc[282] IO_M4 Y1 281
+bsc[283] IO_M4 I
+bsc[285] IO_R1 Y1 284
+bsc[286] IO_R1 I
+bsc[288] IO_M3 Y1 287
+bsc[289] IO_M3 I
+bsc[290] M1_P2 I
+bsc[291] M0_N3 I
+bsc[292] M2_R3 I
+bsc[300] IO_N5 Y1 299
+bsc[301] IO_N5 I
+bsc[303] IO_T2 Y1 302
+bsc[304] IO_T2 I
+bsc[306] IO_P5 Y1 305
+bsc[307] IO_P5 I
+bsc[309] IO_T3 Y1 308
+bsc[310] IO_T3 I
+bsc[312] IO_T4 Y1 311
+bsc[313] IO_T4 I
+bsc[315] IO_M6 Y1 314
+bsc[316] IO_M6 I
+bsc[318] IO_T5 Y1 317
+bsc[319] IO_T5 I
+bsc[321] IO_N6 Y1 320
+bsc[322] IO_N6 I
+bsc[324] IO_R5 Y1 323
+bsc[325] IO_R5 I
+bsc[327] IO_P6 Y1 326
+bsc[328] IO_P6 I
+bsc[330] IO_R6 Y1 329
+bsc[331] IO_R6 I
+bsc[333] IO_M7 Y1 332
+bsc[334] IO_M7 I
+bsc[339] IO_N7 Y1 338
+bsc[340] IO_N7 I
+bsc[342] IO_T6 Y1 341
+bsc[343] IO_T6 I
+bsc[345] IO_P7 Y1 344
+bsc[346] IO_P7 I
+bsc[348] IO_P8 Y1 347
+bsc[349] IO_P8 I
+bsc[351] IO_R7 Y1 350
+bsc[352] IO_R7 I
+bsc[354] IO_T7 Y1 353
+bsc[355] IO_T7 I
+bsc[357] IO_T8 Y1 356
+bsc[358] IO_T8 I
+bsc[365] GCK1_R8 I
+bsc[366] GCK0_N8 I
+bsc[371] IO_N9 Y1 370
+bsc[372] IO_N9 I
+bsc[374] IO_R9 Y1 373
+bsc[375] IO_R9 I
+bsc[377] IO_N10 Y1 376
+bsc[378] IO_N10 I
+bsc[380] IO_T9 Y1 379
+bsc[381] IO_T9 I
+bsc[383] IO_P9 Y1 382
+bsc[384] IO_P9 I
+bsc[386] IO_M10 Y1 385
+bsc[387] IO_M10 I
+bsc[389] IO_R10 Y1 388
+bsc[390] IO_R10 I
+bsc[392] IO_P10 Y1 391
+bsc[393] IO_P10 I
+bsc[398] IO_T10 Y1 397
+bsc[399] IO_T10 I
+bsc[401] IO_R11 Y1 400
+bsc[402] IO_R11 I
+bsc[404] IO_M11 Y1 403
+bsc[405] IO_M11 I
+bsc[407] IO_T11 Y1 406
+bsc[408] IO_T11 I
+bsc[410] IO_N11 Y1 409
+bsc[411] IO_N11 I
+bsc[413] IO_R12 Y1 412
+bsc[414] IO_R12 I
+bsc[416] IO_P11 Y1 415
+bsc[417] IO_P11 I
+bsc[419] IO_T12 Y1 418
+bsc[420] IO_T12 I
+bsc[422] IO_T13 Y1 421
+bsc[423] IO_T13 I
+bsc[425] IO_N12 Y1 424
+bsc[426] IO_N12 I
+bsc[428] IO_R13 Y1 427
+bsc[429] IO_R13 I
+bsc[431] IO_P12 Y1 430
+bsc[432] IO_P12 I
+bsc[434] IO_P13 Y1 433
+bsc[435] IO_P13 I
+bsc[437] IO_T14 Y1 436
+bsc[438] IO_T14 I
+bsc[440] DONE_R14 Y1 439
+bsc[441] DONE_R14 I
+bsc[444] INIT_N15 Y1 443
+bsc[445] INIT_N15 I
+bsc[447] IO_N14 Y1 446
+bsc[448] IO_N14 I
+bsc[450] IO_T15 Y1 449
+bsc[451] IO_T15 I
+bsc[453] IO_M13 Y1 452
+bsc[454] IO_M13 I
+bsc[456] IO_R16 Y1 455
+bsc[457] IO_R16 I
+bsc[459] IO_M14 Y1 458
+bsc[460] IO_M14 I
+bsc[462] IO_L14 Y1 461
+bsc[463] IO_L14 I
+bsc[465] IO_M15 Y1 464
+bsc[466] IO_M15 I
+bsc[468] IO_L12 Y1 467
+bsc[469] IO_L12 I
+bsc[471] IO_P16 Y1 470
+bsc[472] IO_P16 I
+bsc[474] IO_L13 Y1 473
+bsc[475] IO_L13 I
+bsc[477] IO_N16 Y1 476
+bsc[478] IO_N16 I
+bsc[480] IO_M16 Y1 479
+bsc[481] IO_M16 I
+bsc[483] IO_K14 Y1 482
+bsc[484] IO_K14 I
+bsc[486] IO_L16 Y1 485
+bsc[487] IO_L16 I
+bsc[489] IO_K13 Y1 488
+bsc[490] IO_K13 I
+bsc[492] IO_L15 Y1 491
+bsc[493] IO_L15 I
+bsc[495] IO_K12 Y1 494
+bsc[496] IO_K12 I
+bsc[498] IO_K16 Y1 497
+bsc[499] IO_K16 I
+bsc[501] IO_J16 Y1 500
+bsc[502] IO_J16 I
+bsc[504] IO_J14 Y1 503
+bsc[505] IO_J14 I
+bsc[507] IO_K15 Y1 506
+bsc[508] IO_K15 I
+bsc[513] IO_J15 Y1 512
+bsc[514] IO_J15 I
+bsc[516] IO_H16 Y1 515
+bsc[517] IO_H16 I
+bsc[519] IO_H14 Y1 518
+bsc[520] IO_H14 I
+bsc[522] IO_H15 Y1 521
+bsc[523] IO_H15 I
+bsc[525] IO_J13 Y1 524
+bsc[526] IO_J13 I
+bsc[528] IO_G16 Y1 527
+bsc[529] IO_G16 I
+bsc[531] IO_H13 Y1 530
+bsc[532] IO_H13 I
+bsc[534] IO_G14 Y1 533
+bsc[535] IO_G14 I
+bsc[537] IO_G15 Y1 536
+bsc[538] IO_G15 I
+bsc[540] IO_G12 Y1 539
+bsc[541] IO_G12 I
+bsc[543] IO_F16 Y1 542
+bsc[544] IO_F16 I
+bsc[546] IO_G13 Y1 545
+bsc[547] IO_G13 I
+bsc[549] IO_F15 Y1 548
+bsc[550] IO_F15 I
+bsc[552] IO_E16 Y1 551
+bsc[553] IO_E16 I
+bsc[555] IO_F14 Y1 554
+bsc[556] IO_F14 I
+bsc[558] IO_D16 Y1 557
+bsc[559] IO_D16 I
+bsc[561] IO_F12 Y1 560
+bsc[562] IO_F12 I
+bsc[564] IO_E15 Y1 563
+bsc[565] IO_E15 I
+bsc[567] IO_F13 Y1 566
+bsc[568] IO_F13 I
+bsc[570] IO_E14 Y1 569
+bsc[571] IO_E14 I
+bsc[573] IO_C16 Y1 572
+bsc[574] IO_C16 I
+bsc[576] IO_E13 Y1 575
+bsc[577] IO_E13 I
+bsc[579] IO_B16 Y1 578
+bsc[580] IO_B16 I
+bsc[582] IO_D14 Y1 581
+bsc[583] IO_D14 I
+bsc[585] IO_C15 Y1 584
+bsc[586] IO_C15 I
+bsc[588] CCLK_D15 Y1 587
+bsc[589] CCLK_D15 I

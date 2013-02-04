@@ -1,0 +1,107 @@
+name K7R163684B
+irsize 3
+bssize 107
+sample 100
+extest 000
+bsc[0] CB I
+bsc[1] C I
+bsc[2] SA6 I
+bsc[3] SA7 I
+bsc[4] SA8 I
+bsc[5] SA9 I
+bsc[6] SA10 I
+bsc[7] SA11 I
+bsc[8] SA12 I
+bsc[9] Q0 Z0 47
+bsc[10] D0 I
+bsc[11] D9 I
+bsc[12] Q9 Z0 47
+bsc[13] Q1 Z0 47
+bsc[14] D1 I
+bsc[15] D10 I
+bsc[16] Q10 Z0 47
+bsc[17] Q2 Z0 47
+bsc[18] D2 I
+bsc[19] D11 I
+bsc[20] Q11 Z0 47
+bsc[21] Q3 Z0 47
+bsc[22] D3 I
+bsc[23] D12 I
+bsc[24] Q12 Z0 47
+bsc[25] Q4 Z0 47
+bsc[26] D4 I
+bsc[28] D13 I
+bsc[29] Q13 Z0 47
+bsc[30] Q5 Z0 47
+bsc[31] D5 I
+bsc[32] D14 I
+bsc[33] Q14 Z0 47
+bsc[34] Q6 Z0 47
+bsc[35] D6 I
+bsc[36] D15 I
+bsc[37] Q15 Z0 47
+bsc[38] Q7 Z0 47
+bsc[39] D7 I
+bsc[40] D16 I
+bsc[41] Q16 Z0 47
+bsc[42] Q8 Z0 47
+bsc[43] D8 I
+bsc[44] D17 I
+bsc[45] Q17 Z0 47
+bsc[46] CQ O
+bsc[49] SA14 I
+bsc[50] SA15 I
+bsc[52] RB I
+bsc[53] BW1B I
+bsc[54] BW0B I
+bsc[55] K I
+bsc[56] KB I
+bsc[57] BW3B I
+bsc[58] BW2B I
+bsc[59] WB I
+bsc[60] SA16 I
+bsc[61] SA13 I
+bsc[63] DOFFB I
+bsc[64] CQB O
+bsc[65] Q18 Z0 47
+bsc[66] D18 I
+bsc[67] D27 I
+bsc[68] Q27 Z0 47
+bsc[69] Q19 Z0 47
+bsc[70] D19 I
+bsc[71] D28 I
+bsc[72] Q28 Z0 47
+bsc[73] Q20 Z0 47
+bsc[74] D20 I
+bsc[75] D29 I
+bsc[76] Q29 Z0 47
+bsc[77] Q21 Z0 47
+bsc[78] D21 I
+bsc[79] D30 I
+bsc[80] Q30 Z0 47
+bsc[81] Q22 Z0 47
+bsc[82] D22 I
+bsc[83] D31 I
+bsc[84] Q31 Z0 47
+bsc[85] Q23 Z0 47
+bsc[86] D23 I
+bsc[87] D32 I
+bsc[88] Q32 Z0 47
+bsc[89] Q24 Z0 47
+bsc[90] D24 I
+bsc[91] D33 I
+bsc[92] Q33 Z0 47
+bsc[93] Q25 Z0 47
+bsc[94] D25 I
+bsc[95] D34 I
+bsc[96] Q34 Z0 47
+bsc[97] Q26 Z0 47
+bsc[98] D26 I
+bsc[99] D35 I
+bsc[100] Q35 Z0 47
+bsc[101] SA5 I
+bsc[102] SA4 I
+bsc[103] SA3 I
+bsc[104] SA2 I
+bsc[105] SA1 I
+bsc[106] SA0 I
