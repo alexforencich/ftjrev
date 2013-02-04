@@ -1,0 +1,345 @@
+name XC3S1200E-FT256
+irsize 6
+bssize 772
+sample 000001
+extest 001111
+bsc[771] IPAD79 I
+bsc[770] C15 I
+bsc[769] C15 Y1 768
+bsc[767] C16 I
+bsc[766] C16 Y1 765
+bsc[764] D14 I
+bsc[763] D14 Y1 762
+bsc[761] D15 I
+bsc[760] D15 Y1 759
+bsc[752] IPAD86 I
+bsc[738] E16 I
+bsc[737] E16 Y1 736
+bsc[735] E13 I
+bsc[734] E13 Y1 733
+bsc[726] IPAD96 I
+bsc[719] F12 I
+bsc[718] F12 Y1 717
+bsc[716] F13 I
+bsc[715] F13 Y1 714
+bsc[712] F15 I
+bsc[711] F15 Y1 710
+bsc[709] F14 I
+bsc[708] F14 Y1 707
+bsc[700] IPAD106 I
+bsc[699] G14 I
+bsc[698] G14 Y1 697
+bsc[696] G13 I
+bsc[695] G13 Y1 694
+bsc[693] G16 I
+bsc[692] G16 Y1 691
+bsc[690] G15 I
+bsc[689] G15 Y1 688
+bsc[687] IPAD111 I
+bsc[686] H11 I
+bsc[685] H11 Y1 684
+bsc[683] H12 I
+bsc[682] H12 Y1 681
+bsc[680] H14 I
+bsc[679] H14 Y1 678
+bsc[677] H15 I
+bsc[676] H15 Y1 675
+bsc[674] IPAD116 I
+bsc[673] J13 I
+bsc[672] J13 Y1 671
+bsc[670] J14 I
+bsc[669] J14 Y1 668
+bsc[667] J16 I
+bsc[666] J16 Y1 665
+bsc[664] K16 I
+bsc[663] K16 Y1 662
+bsc[661] IPAD121 I
+bsc[660] K14 I
+bsc[659] K14 Y1 658
+bsc[657] K15 I
+bsc[656] K15 Y1 655
+bsc[654] K12 I
+bsc[653] K12 Y1 652
+bsc[651] K13 I
+bsc[650] K13 Y1 649
+bsc[648] IPAD126 I
+bsc[641] L15 I
+bsc[640] L15 Y1 639
+bsc[638] L14 I
+bsc[637] L14 Y1 636
+bsc[634] L13 I
+bsc[633] L13 Y1 632
+bsc[631] L12 I
+bsc[630] L12 Y1 629
+bsc[628] M16 I
+bsc[627] M16 Y1 626
+bsc[625] N16 I
+bsc[624] N16 Y1 623
+bsc[609] IPAD141 I
+bsc[596] N15 I
+bsc[595] N15 Y1 594
+bsc[593] N14 I
+bsc[592] N14 Y1 591
+bsc[590] IPAD148 I
+bsc[589] P15 I
+bsc[588] P15 Y1 587
+bsc[586] P16 I
+bsc[585] P16 Y1 584
+bsc[583] R15 I
+bsc[582] R15 Y1 581
+bsc[580] R16 I
+bsc[579] R16 Y1 578
+bsc[577] DONE I
+bsc[576] DONE Y1 575
+bsc[574] R14 I
+bsc[573] R14 Y1 572
+bsc[571] P14 I
+bsc[570] P14 Y1 569
+bsc[568] IPAD155 I
+bsc[567] R13 I
+bsc[566] R13 Y1 565
+bsc[564] T13 I
+bsc[563] T13 Y1 562
+bsc[561] P13 I
+bsc[560] P13 Y1 559
+bsc[558] N12 I
+bsc[557] N12 Y1 556
+bsc[555] P12 I
+bsc[554] P12 Y1 553
+bsc[552] IPAD161 I
+bsc[551] IPAD162 I
+bsc[541] P11 I
+bsc[540] P11 Y1 539
+bsc[538] R11 I
+bsc[537] R11 Y1 536
+bsc[527] T12 I
+bsc[526] T12 Y1 525
+bsc[524] M10 I
+bsc[523] M10 Y1 522
+bsc[521] N10 I
+bsc[520] N10 Y1 519
+bsc[513] R10 I
+bsc[512] R10 Y1 511
+bsc[510] P10 I
+bsc[509] P10 Y1 508
+bsc[496] M9 I
+bsc[495] M9 Y1 494
+bsc[493] L9 I
+bsc[492] L9 Y1 491
+bsc[490] T10 I
+bsc[489] T10 Y1 488
+bsc[487] N9 I
+bsc[486] N9 Y1 485
+bsc[484] P9 I
+bsc[483] P9 Y1 482
+bsc[481] IPAD190 I
+bsc[480] IPAD191 I
+bsc[479] P8 I
+bsc[478] P8 Y1 477
+bsc[476] N8 I
+bsc[475] N8 Y1 474
+bsc[473] T8 I
+bsc[472] T8 Y1 471
+bsc[470] L8 I
+bsc[469] L8 Y1 468
+bsc[467] M8 I
+bsc[466] M8 Y1 465
+bsc[464] IPAD197 I
+bsc[463] IPAD198 I
+bsc[462] P7 I
+bsc[461] P7 Y1 460
+bsc[459] N7 I
+bsc[458] N7 Y1 457
+bsc[453] P6 I
+bsc[452] P6 Y1 451
+bsc[450] R6 I
+bsc[449] R6 Y1 448
+bsc[436] M7 I
+bsc[435] M7 Y1 434
+bsc[425] N6 I
+bsc[424] N6 Y1 423
+bsc[422] M6 I
+bsc[421] M6 Y1 420
+bsc[408] T5 I
+bsc[407] T5 Y1 406
+bsc[405] T4 I
+bsc[404] T4 Y1 403
+bsc[402] R4 I
+bsc[401] R4 Y1 400
+bsc[399] N5 I
+bsc[398] N5 Y1 397
+bsc[396] P5 I
+bsc[395] P5 Y1 394
+bsc[393] IPAD226 I
+bsc[392] IPAD227 I
+bsc[391] P4 I
+bsc[390] P4 Y1 389
+bsc[388] P3 I
+bsc[387] P3 Y1 386
+bsc[385] IPAD230 I
+bsc[384] IPAD231 I
+bsc[383] R1 I
+bsc[382] R1 Y1 381
+bsc[380] R2 I
+bsc[379] R2 Y1 378
+bsc[377] P1 I
+bsc[376] P1 Y1 375
+bsc[374] P2 I
+bsc[373] P2 Y1 372
+bsc[352] IPAD243 I
+bsc[339] IPAD248 I
+bsc[338] L4 I
+bsc[337] L4 Y1 336
+bsc[335] M4 I
+bsc[334] M4 Y1 333
+bsc[332] N1 I
+bsc[331] N1 Y1 330
+bsc[329] M1 I
+bsc[328] M1 Y1 327
+bsc[325] L5 I
+bsc[324] L5 Y1 323
+bsc[322] K5 I
+bsc[321] K5 Y1 320
+bsc[319] L2 I
+bsc[318] L2 Y1 317
+bsc[316] L3 I
+bsc[315] L3 Y1 314
+bsc[313] IPAD258 I
+bsc[312] K3 I
+bsc[311] K3 Y1 310
+bsc[309] K2 I
+bsc[308] K2 Y1 307
+bsc[306] K1 I
+bsc[305] K1 Y1 304
+bsc[303] J1 I
+bsc[302] J1 Y1 301
+bsc[300] IPAD263 I
+bsc[299] J4 I
+bsc[298] J4 Y1 297
+bsc[296] J5 I
+bsc[295] J5 Y1 294
+bsc[293] J3 I
+bsc[292] J3 Y1 291
+bsc[290] J2 I
+bsc[289] J2 Y1 288
+bsc[287] IPAD268 I
+bsc[286] H4 I
+bsc[285] H4 Y1 284
+bsc[283] H3 I
+bsc[282] H3 Y1 281
+bsc[280] H6 I
+bsc[279] H6 Y1 278
+bsc[277] H5 I
+bsc[276] H5 Y1 275
+bsc[274] IPAD273 I
+bsc[273] G2 I
+bsc[272] G2 Y1 271
+bsc[270] G3 I
+bsc[269] G3 Y1 268
+bsc[267] G4 I
+bsc[266] G4 Y1 265
+bsc[264] G5 I
+bsc[263] G5 Y1 262
+bsc[261] IPAD278 I
+bsc[254] E1 I
+bsc[253] E1 Y1 252
+bsc[251] D1 I
+bsc[250] D1 Y1 249
+bsc[247] F4 I
+bsc[246] F4 Y1 245
+bsc[244] F3 I
+bsc[243] F3 Y1 242
+bsc[241] E4 I
+bsc[240] E4 Y1 239
+bsc[238] E3 I
+bsc[237] E3 Y1 236
+bsc[222] IPAD293 I
+bsc[203] IPAD300 I
+bsc[202] C2 I
+bsc[201] C2 Y1 200
+bsc[199] C1 I
+bsc[198] C1 Y1 197
+bsc[196] B2 I
+bsc[195] B2 Y1 194
+bsc[193] B1 I
+bsc[192] B1 Y1 191
+bsc[186] C3 I
+bsc[185] C3 Y1 184
+bsc[183] IPAD3 I
+bsc[182] C4 I
+bsc[181] C4 Y1 180
+bsc[179] C5 I
+bsc[178] C5 Y1 177
+bsc[176] B4 I
+bsc[175] B4 Y1 174
+bsc[173] A4 I
+bsc[172] A4 Y1 171
+bsc[170] A5 I
+bsc[169] A5 Y1 168
+bsc[167] IPAD9 I
+bsc[166] IPAD10 I
+bsc[156] D6 I
+bsc[155] D6 Y1 154
+bsc[153] C6 I
+bsc[152] C6 Y1 151
+bsc[142] B6 I
+bsc[141] B6 Y1 140
+bsc[128] D7 I
+bsc[127] D7 Y1 126
+bsc[125] E7 I
+bsc[124] E7 Y1 123
+bsc[119] C7 I
+bsc[118] C7 Y1 117
+bsc[116] B7 I
+bsc[115] B7 Y1 114
+bsc[111] F8 I
+bsc[110] F8 Y1 109
+bsc[108] E8 I
+bsc[107] E8 Y1 106
+bsc[105] A7 I
+bsc[104] A7 Y1 103
+bsc[102] D8 I
+bsc[101] D8 Y1 100
+bsc[99] C8 I
+bsc[98] C8 Y1 97
+bsc[96] IPAD38 I
+bsc[95] IPAD39 I
+bsc[94] A9 I
+bsc[93] A9 Y1 92
+bsc[91] A10 I
+bsc[90] A10 Y1 89
+bsc[88] D9 I
+bsc[87] D9 Y1 86
+bsc[85] F9 I
+bsc[84] F9 Y1 83
+bsc[82] E9 I
+bsc[81] E9 Y1 80
+bsc[79] IPAD45 I
+bsc[78] IPAD46 I
+bsc[68] E10 I
+bsc[67] E10 Y1 66
+bsc[65] D10 I
+bsc[64] D10 Y1 63
+bsc[51] B10 I
+bsc[50] B10 Y1 49
+bsc[48] B11 I
+bsc[47] B11 Y1 46
+bsc[45] C11 I
+bsc[44] C11 Y1 43
+bsc[40] E11 I
+bsc[39] E11 Y1 38
+bsc[37] D11 I
+bsc[36] D11 Y1 35
+bsc[17] A12 I
+bsc[16] A12 Y1 15
+bsc[14] A13 I
+bsc[13] A13 Y1 12
+bsc[11] B13 I
+bsc[10] B13 Y1 9
+bsc[8] IPAD74 I
+bsc[7] IPAD75 I
+bsc[6] A14 I
+bsc[5] A14 Y1 4
+bsc[3] B14 I
+bsc[2] B14 Y1 1
+bsc[0] IPAD78 I
