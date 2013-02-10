@@ -667,6 +667,34 @@ void find_all_pins(void)
 					find_receiver(i, j);
 }
 
+void probe_output(int ci, int cj)
+{
+	reset();
+	bsc_to_allz();
+	if(bsmode[ci][cj]=='Y' || bsmode[ci][cj]=='Z')
+		bsc_out[ci][bszpin[ci][cj]]=!bszval[ci][cj];
+	bsc_out[ci][cj]=0;
+	set_ir_all(sample);
+	shift_bsc(0);
+	printf("%d:%s\n", ci, bsname[ci][cj]);
+	fflush(stdout);
+	bsc_out[ci][cj]=1;
+	set_ir_all(extest);
+	shift_bsc(0);
+	bsc_out[ci][cj]=0;
+	set_ir_all(extest);
+}
+
+void probe_outputs(void)
+{
+	int i,j;
+	for(i=0;i<ndev;i++)
+		if(!bypass[i])
+			for(j=0;j<bslen[i];j++)
+				if(!bsc_clk[i][j] && !bsextr[i][j] && bsname[i][j] && strchr("OYZ",bsmode[i][j]))
+					probe_output(i, j);
+}
+
 void signal_handler(int sig)
 {
 	reset();
@@ -680,12 +708,14 @@ void usage(void)
 	fprintf(stderr, "    init     initialize chan and exit\n");
 	fprintf(stderr, "    scan     scan for connections\n");
 	fprintf(stderr, "    clocks   scan for clocks only\n");
+	fprintf(stderr, "    oprobe   probe outputs with oscilloscope\n");
 }
 
 int main(int argc, char *argv[])
 {
 	int do_scan_clock = 0;
 	int do_scan_chain = 0;
+	int do_oprobe = 0;
 	if(argc != 2) {
 		usage();
 		return 0;
@@ -697,6 +727,9 @@ int main(int argc, char *argv[])
 		do_scan_chain = 1;
 	} else if(!strcmp(argv[1], "clocks")){
 		do_scan_clock = 1;
+	} else if(!strcmp(argv[1], "oprobe")){
+		do_scan_clock = 1;
+		do_oprobe = 1;
 	} else {
 		usage();
 		return 0;
@@ -732,6 +765,15 @@ int main(int argc, char *argv[])
 	if(do_scan_chain) {
 		fprintf(stderr, "Pin pass...\n");
 		find_all_pins();
+		reset();
+	}
+	if(do_oprobe) {
+		fprintf(stderr, "Probing outputs, press ctrl+c to stop...\n");
+		
+		while (1) {
+			probe_outputs();
+		}
+		
 		reset();
 	}
 	done();
