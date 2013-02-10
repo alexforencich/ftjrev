@@ -75,12 +75,21 @@ uint8_t getstat(void)
 	return res;
 }
 
+int open_cable(void)
+{
+	if(!ftdi_usb_open(&ctx, 0x8482, 0x1002))
+		return 0;
+	if(!ftdi_usb_open(&ctx, 0x0403, 0x6010))
+		return 0;
+	return 1;
+}
+
 int init(void)
 {
 	uint8_t latency;
 	ftdi_init(&ctx);
 	ftdi_set_interface(&ctx, INTERFACE_A);
-	if(ftdi_usb_open(&ctx, 0x8482, 0x1002))
+	if(open_cable())
 		return 1;
 	ftdi_usb_reset(&ctx);
 	ftdi_set_latency_timer(&ctx, 1);
