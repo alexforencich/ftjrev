@@ -695,6 +695,58 @@ void probe_outputs(void)
 					probe_output(i, j);
 }
 
+void probe_inputs()
+{
+	int i,j,p;
+	for(i=0;i<ndev;i++)
+		if(!bypass[i]) {
+			bsc_sig0[i]=calloc(sizeof(int),bslen[i]);
+			bsc_sig1[i]=calloc(sizeof(int),bslen[i]);
+		}
+	reset();
+	bsc_to_allz();
+	set_ir_all(sample);
+	shift_bsc(0);
+	for(p=0;p<CONPASS;p++) {
+		//bsc_out[ci][cj]=!(p&1);
+		// toggle pin
+		if(p&1)
+		    setgpio(9);
+		else
+		    setgpio(1);
+		shift_bsc(1);
+		set_ir_all(sample);
+		for(i=0;i<ndev;i++)
+			if(!bypass[i])
+				for(j=0;j<bslen[i];j++) {
+					if(bsc_in[i][j] == (p&1))
+						bsc_sig0[i][j]++;
+					if(bsc_in[i][j] != (p&1))
+						bsc_sig1[i][j]++;
+				}
+	}
+	for(i=0;i<ndev;i++)
+		if(!bypass[i]) {
+			for(j=0;j<bslen[i];j++) {
+				if(!bsc_clk[i][j] && bsc_sig0[i][j]>=CONMATCH) {
+					if(bsname[i][j]) {
+						printf("%d[%s]:%s\n", i, name[i], bsname[i][j]);
+					} else
+						printf("%d[%s]:bsc[%d]\n", i, name[i], j);
+				}
+				if(!bsc_clk[i][j] && bsc_sig1[i][j]>=CONMATCH) {
+					if(bsname[i][j]) {
+						printf("!%d[%s]:%s\n", i, name[i], bsname[i][j]);
+					} else
+						printf("!%d[%s]:bsc[%d]\n", i, name[i], j);
+				}
+			}
+			free(bsc_sig0[i]);
+			free(bsc_sig1[i]);
+		}
+	fflush(stdout);
+}
+
 void signal_handler(int sig)
 {
 	reset();
@@ -708,6 +760,7 @@ void usage(void)
 	fprintf(stderr, "    init     initialize chan and exit\n");
 	fprintf(stderr, "    scan     scan for connections\n");
 	fprintf(stderr, "    clocks   scan for clocks only\n");
+	fprintf(stderr, "    iprobe   probe inputs with JTAG GPIO pin\n");
 	fprintf(stderr, "    oprobe   probe outputs with oscilloscope\n");
 }
 
@@ -715,6 +768,7 @@ int main(int argc, char *argv[])
 {
 	int do_scan_clock = 0;
 	int do_scan_chain = 0;
+	int do_iprobe = 0;
 	int do_oprobe = 0;
 	if(argc != 2) {
 		usage();
@@ -727,6 +781,9 @@ int main(int argc, char *argv[])
 		do_scan_chain = 1;
 	} else if(!strcmp(argv[1], "clocks")){
 		do_scan_clock = 1;
+	} else if(!strcmp(argv[1], "iprobe")){
+		do_scan_clock = 1;
+		do_iprobe = 1;
 	} else if(!strcmp(argv[1], "oprobe")){
 		do_scan_clock = 1;
 		do_oprobe = 1;
@@ -765,6 +822,15 @@ int main(int argc, char *argv[])
 	if(do_scan_chain) {
 		fprintf(stderr, "Pin pass...\n");
 		find_all_pins();
+		reset();
+	}
+	if(do_iprobe) {
+		fprintf(stderr, "Probing inputs, press ctrl+c to stop...\n");
+		
+		while (1) {
+			probe_inputs();
+		}
+		
 		reset();
 	}
 	if(do_oprobe) {
