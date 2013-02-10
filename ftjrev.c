@@ -756,38 +756,66 @@ void signal_handler(int sig)
 
 void usage(void)
 {
-	fprintf(stderr, "Usage: ftjrev command\n");
+	fprintf(stderr, "Usage: ftjrev command|option [command|option] ...\n");
+	fprintf(stderr, "  Commands\n");
 	fprintf(stderr, "    init     initialize chan and exit\n");
 	fprintf(stderr, "    scan     scan for connections\n");
 	fprintf(stderr, "    clocks   scan for clocks only\n");
 	fprintf(stderr, "    iprobe   probe inputs with JTAG GPIO pin\n");
 	fprintf(stderr, "    oprobe   probe outputs with oscilloscope\n");
+	fprintf(stderr, "  Options\n");
+	fprintf(stderr, "    speed n  set JTAG speed - default 1, higher is slower\n");
 }
 
 int main(int argc, char *argv[])
 {
+	int i, k;
+	int have_cmd = 0;
 	int do_scan_clock = 0;
 	int do_scan_chain = 0;
 	int do_iprobe = 0;
 	int do_oprobe = 0;
-	if(argc != 2) {
+	int speed = 1;
+	if(argc < 2) {
 		usage();
 		return 0;
 	}
-	if(!strcmp(argv[1], "init")){
-		// good to go
-	} else if(!strcmp(argv[1], "scan")){
-		do_scan_clock = 1;
-		do_scan_chain = 1;
-	} else if(!strcmp(argv[1], "clocks")){
-		do_scan_clock = 1;
-	} else if(!strcmp(argv[1], "iprobe")){
-		do_scan_clock = 1;
-		do_iprobe = 1;
-	} else if(!strcmp(argv[1], "oprobe")){
-		do_scan_clock = 1;
-		do_oprobe = 1;
-	} else {
+	for (i = 1; i < argc; i++)
+	{
+		if(!strcmp(argv[i], "init")){
+			// good to go
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "scan")){
+			do_scan_clock = 1;
+			do_scan_chain = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "clocks")){
+			do_scan_clock = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "iprobe")){
+			do_scan_clock = 1;
+			do_iprobe = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "oprobe")){
+			do_scan_clock = 1;
+			do_oprobe = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "speed") && i+1 < argc){
+			i++;
+			k = sscanf(argv[i], "%d", &speed);
+			if(k == 0) {
+				fprintf(stderr, "Invalid speed\n");
+				usage();
+				return 0;
+			}
+		} else {
+			fprintf(stderr, "Unknown command or option\n");
+			usage();
+			return 0;
+		}
+	}
+	if(!have_cmd) {
+		fprintf(stderr, "No command specified\n");
 		usage();
 		return 0;
 	}
@@ -795,6 +823,7 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Cable not found\n");
 		return 1;
 	}
+	setspeed(speed);
 	signal(SIGINT, signal_handler);
 	signal(SIGSEGV, signal_handler);
 	signal(SIGTERM, signal_handler);
