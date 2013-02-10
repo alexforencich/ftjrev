@@ -47,6 +47,9 @@ int *bsc_tmp[MAX_DEV];
 int *bsc_sig0[MAX_DEV];
 int *bsc_sig1[MAX_DEV];
 
+int clock_use_extest;
+int clock_use_sample;
+
 void setgpio(uint8_t val)
 {
 	uint8_t buf[3];
@@ -575,12 +578,21 @@ void find_clocks(void)
 			bsc_tmp[i]=calloc(sizeof(int),bslen[i]);
 		}
 	bsc_to_allz();
-	set_ir_all(sample);
+	if (clock_use_extest)
+		set_ir_all(extest);
+	else
+		set_ir_all(sample);
 	shift_bsc(0);
 	for(p=0;p<CLKPASS;p++) {
-		set_ir_all(extest);
+		if (clock_use_sample)
+			set_ir_all(sample);
+		else
+			set_ir_all(extest);
 		shift_bsc(1);
-		set_ir_all(sample);
+		if (clock_use_extest)
+			set_ir_all(extest);
+		else
+			set_ir_all(sample);
 		if(p)
 			for(i=0;i<ndev;i++)
 				if(!bypass[i])
@@ -758,13 +770,16 @@ void usage(void)
 {
 	fprintf(stderr, "Usage: ftjrev command|option [command|option] ...\n");
 	fprintf(stderr, "  Commands\n");
-	fprintf(stderr, "    init     initialize chan and exit\n");
-	fprintf(stderr, "    scan     scan for connections\n");
-	fprintf(stderr, "    clocks   scan for clocks only\n");
-	fprintf(stderr, "    iprobe   probe inputs with JTAG GPIO pin\n");
-	fprintf(stderr, "    oprobe   probe outputs with oscilloscope\n");
+	fprintf(stderr, "    init           initialize chan and exit\n");
+	fprintf(stderr, "    clocks         scan for clocks only\n");
+	fprintf(stderr, "    scan           scan for connections\n");
+	fprintf(stderr, "    iprobe         probe inputs with JTAG GPIO pin\n");
+	fprintf(stderr, "    oprobe         probe outputs with oscilloscope\n");
+	fprintf(stderr, "  Command/Options\n");
+	fprintf(stderr, "    clocks-extest  use only extest when checking for clocks\n");
+	fprintf(stderr, "    clocks-sample  use only sample when checking for clocks\n");
 	fprintf(stderr, "  Options\n");
-	fprintf(stderr, "    speed n  set JTAG speed - default 1, higher is slower\n");
+	fprintf(stderr, "    speed n        set JTAG speed - default 1, higher is slower\n");
 }
 
 int main(int argc, char *argv[])
@@ -776,6 +791,8 @@ int main(int argc, char *argv[])
 	int do_iprobe = 0;
 	int do_oprobe = 0;
 	int speed = 1;
+	clock_use_extest = 0;
+	clock_use_sample = 0;
 	if(argc < 2) {
 		usage();
 		return 0;
@@ -785,12 +802,22 @@ int main(int argc, char *argv[])
 		if(!strcmp(argv[i], "init")){
 			// good to go
 			have_cmd = 1;
-		} else if(!strcmp(argv[i], "scan")){
+		} else if(!strcmp(argv[i], "clocks-extest")){
 			do_scan_clock = 1;
-			do_scan_chain = 1;
+			clock_use_extest = 1;
+			clock_use_sample = 0;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "clocks-sample")){
+			do_scan_clock = 1;
+			clock_use_extest = 0;
+			clock_use_sample = 1;
 			have_cmd = 1;
 		} else if(!strcmp(argv[i], "clocks")){
 			do_scan_clock = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "scan")){
+			do_scan_clock = 1;
+			do_scan_chain = 1;
 			have_cmd = 1;
 		} else if(!strcmp(argv[i], "iprobe")){
 			do_scan_clock = 1;
