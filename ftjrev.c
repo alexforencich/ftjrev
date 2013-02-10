@@ -674,8 +674,33 @@ void signal_handler(int sig)
 	exit(sig<<8);
 }
 
-int main(void)
+void usage(void)
 {
+	fprintf(stderr, "Usage: ftjrev command\n");
+	fprintf(stderr, "    init     initialize chan and exit\n");
+	fprintf(stderr, "    scan     scan for connections\n");
+	fprintf(stderr, "    clocks   scan for clocks only\n");
+}
+
+int main(int argc, char *argv[])
+{
+	int do_scan_clock = 0;
+	int do_scan_chain = 0;
+	if(argc != 2) {
+		usage();
+		return 0;
+	}
+	if(!strcmp(argv[1], "init")){
+		// good to go
+	} else if(!strcmp(argv[1], "scan")){
+		do_scan_clock = 1;
+		do_scan_chain = 1;
+	} else if(!strcmp(argv[1], "clocks")){
+		do_scan_clock = 1;
+	} else {
+		usage();
+		return 0;
+	}
 	if(init()) {
 		fprintf(stderr, "Cable not found\n");
 		return 1;
@@ -698,13 +723,17 @@ int main(void)
 		return 1;
 	}
 	reset();
-	fprintf(stderr, "Clock pass...\n");
-	find_clocks();
-	reset();
-	fflush(stdout);
-	fprintf(stderr, "Pin pass...\n");
-	find_all_pins();
-	reset();
+	if(do_scan_clock) {
+		fprintf(stderr, "Clock pass...\n");
+		find_clocks();
+		reset();
+		fflush(stdout);
+	}
+	if(do_scan_chain) {
+		fprintf(stderr, "Pin pass...\n");
+		find_all_pins();
+		reset();
+	}
 	done();
 	return 0;
 }
