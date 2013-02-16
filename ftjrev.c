@@ -50,6 +50,8 @@ int *bsc_sig1[MAX_DEV];
 int clock_use_extest;
 int clock_use_sample;
 
+int scan_use_extest;
+
 void setgpio(uint8_t val)
 {
 	uint8_t buf[3];
@@ -629,13 +631,19 @@ void find_receiver(int ci, int cj)
 	if(bsmode[ci][cj]=='Y' || bsmode[ci][cj]=='Z')
 		bsc_out[ci][bszpin[ci][cj]]=!bszval[ci][cj];
 	bsc_out[ci][cj]=0;
-	set_ir_all(sample);
+	if (scan_use_extest)
+		set_ir_all(extest);
+	else
+		set_ir_all(sample);
 	shift_bsc(0);
 	for(p=0;p<CONPASS;p++) {
 		bsc_out[ci][cj]=!(p&1);
 		set_ir_all(extest);
 		shift_bsc(1);
-		set_ir_all(sample);
+		if (scan_use_extest)
+			set_ir_all(extest);
+		else
+			set_ir_all(sample);
 		for(i=0;i<ndev;i++)
 			if(!bypass[i])
 				for(j=0;j<bslen[i];j++) {
@@ -778,6 +786,7 @@ void usage(void)
 	fprintf(stderr, "  Command/Options\n");
 	fprintf(stderr, "    clocks-extest  use only extest when checking for clocks\n");
 	fprintf(stderr, "    clocks-sample  use only sample when checking for clocks\n");
+	fprintf(stderr, "    scan-extest    use only extest when scanning\n");
 	fprintf(stderr, "  Options\n");
 	fprintf(stderr, "    speed n        set JTAG speed - default 1, higher is slower\n");
 }
@@ -791,8 +800,11 @@ int main(int argc, char *argv[])
 	int do_iprobe = 0;
 	int do_oprobe = 0;
 	int speed = 1;
+	
 	clock_use_extest = 0;
 	clock_use_sample = 0;
+	scan_use_extest = 0;
+	
 	if(argc < 2) {
 		usage();
 		return 0;
@@ -811,6 +823,11 @@ int main(int argc, char *argv[])
 			do_scan_clock = 1;
 			clock_use_extest = 0;
 			clock_use_sample = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "scan-extest")){
+			do_scan_clock = 1;
+			scan_use_extest = 1;
+			do_scan_chain = 1;
 			have_cmd = 1;
 		} else if(!strcmp(argv[i], "clocks")){
 			do_scan_clock = 1;
