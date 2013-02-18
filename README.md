@@ -1,7 +1,7 @@
 # ftjev Readme
 
 For more information and updates:
-http://alexforencich.com/wiki/en/start
+http://alexforencich.com/wiki/en/projects/ftjrev/start
 
 GitHub repository:
 https://github.com/alexforencich/ftjrev
