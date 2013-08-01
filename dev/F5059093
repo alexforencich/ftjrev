@@ -1,0 +1,24 @@
+name XCF32P-VO48
+irsize 16
+bssize 32
+sample 0000000000000001
+extest 0000000000000000
+bsc[0] CE I
+bsc[1] CLK I
+bsc[3] OE_RESET Y0 2
+bsc[4] OE_RESET I
+bsc[6] CEO Y0 5
+bsc[8] CLKOUT Y0 7
+bsc[11] CF I
+bsc[12] BUSY I
+bsc[14] D7 Y0 13
+bsc[16] D6 Y0 15
+bsc[18] D5 Y0 17
+bsc[20] D4 Y0 19
+bsc[22] D3 Y0 21
+bsc[24] D2 Y0 23
+bsc[26] D1 Y0 25
+bsc[28] D0 Y0 27
+bsc[29] REV_SEL1 I
+bsc[30] REV_SEL0 I
+bsc[31] EN_EXT_SEL I
