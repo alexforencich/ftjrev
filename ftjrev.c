@@ -52,6 +52,8 @@ int clock_use_sample;
 
 int scan_use_extest;
 
+int iprobe_group;
+
 void setgpio(uint8_t val)
 {
 	uint8_t buf[3];
@@ -718,6 +720,7 @@ void probe_outputs(void)
 void probe_inputs()
 {
 	int i,j,p;
+	char buffer[256], buffer2[256];
 	for(i=0;i<ndev;i++)
 		if(!bypass[i]) {
 			bsc_sig0[i]=calloc(sizeof(int),bslen[i]);
@@ -745,25 +748,48 @@ void probe_inputs()
 						bsc_sig1[i][j]++;
 				}
 	}
+	buffer[0] = 0;
+	buffer2[0] = 0;
 	for(i=0;i<ndev;i++)
 		if(!bypass[i]) {
 			for(j=0;j<bslen[i];j++) {
 				if(!bsc_clk[i][j] && bsc_sig0[i][j]>=CONMATCH) {
 					if(bsname[i][j]) {
-						printf("%d[%s]:%s\n", i, name[i], bsname[i][j]);
+						sprintf(buffer, "%d[%s]:%s\n", i, name[i], bsname[i][j]);
 					} else
-						printf("%d[%s]:bsc[%d]\n", i, name[i], j);
+						sprintf(buffer, "%d[%s]:bsc[%d]\n", i, name[i], j);
 				}
 				if(!bsc_clk[i][j] && bsc_sig1[i][j]>=CONMATCH) {
 					if(bsname[i][j]) {
-						printf("!%d[%s]:%s\n", i, name[i], bsname[i][j]);
+						sprintf(buffer, "!%d[%s]:%s\n", i, name[i], bsname[i][j]);
 					} else
-						printf("!%d[%s]:bsc[%d]\n", i, name[i], j);
+						sprintf(buffer, "!%d[%s]:bsc[%d]\n", i, name[i], j);
+				}
+				if (buffer[0] != 0) {
+					if (iprobe_group) {
+						if (buffer2[0] == 0) {
+							strcpy(buffer2, buffer);
+							buffer[0] = 0;
+						} else {
+							if (buffer2[0] != '~') {
+								printf("\\\\\\\\\\\\\n");
+								printf("%s", buffer2);
+								buffer2[0] = '~';
+							}
+							printf("%s", buffer);
+							buffer[0] = 0;
+						}
+					} else {
+						printf("%s", buffer);
+						buffer[0] = 0;
+					}
 				}
 			}
 			free(bsc_sig0[i]);
 			free(bsc_sig1[i]);
 		}
+	if (iprobe_group && buffer2[0] == '~')
+		printf("//////\n");
 	fflush(stdout);
 }
 
@@ -787,6 +813,7 @@ void usage(void)
 	fprintf(stderr, "    clocks-extest  use only extest when checking for clocks\n");
 	fprintf(stderr, "    clocks-sample  use only sample when checking for clocks\n");
 	fprintf(stderr, "    scan-extest    use only extest when scanning\n");
+	fprintf(stderr, "    iprobe-group   probe input groups\n");
 	fprintf(stderr, "  Options\n");
 	fprintf(stderr, "    speed n        set JTAG speed - default 1, higher is slower\n");
 }
@@ -804,6 +831,7 @@ int main(int argc, char *argv[])
 	clock_use_extest = 0;
 	clock_use_sample = 0;
 	scan_use_extest = 0;
+	iprobe_group = 0;
 	
 	if(argc < 2) {
 		usage();
@@ -828,6 +856,11 @@ int main(int argc, char *argv[])
 			do_scan_clock = 1;
 			scan_use_extest = 1;
 			do_scan_chain = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "iprobe-group")){
+			do_scan_clock = 1;
+			do_iprobe = 1;
+			iprobe_group = 1;
 			have_cmd = 1;
 		} else if(!strcmp(argv[i], "clocks")){
 			do_scan_clock = 1;
