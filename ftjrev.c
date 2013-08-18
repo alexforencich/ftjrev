@@ -51,6 +51,7 @@ int clock_use_extest;
 int clock_use_sample;
 
 int scan_use_extest;
+int scan_index;
 
 int iprobe_group;
 
@@ -682,11 +683,17 @@ void find_receiver(int ci, int cj)
 void find_all_pins(void)
 {
 	int i,j;
-	for(i=0;i<ndev;i++)
-		if(!bypass[i])
-			for(j=0;j<bslen[i];j++)
-				if(!bsc_clk[i][j] && !bsextr[i][j] && bsname[i][j] && strchr("OYZ",bsmode[i][j]))
-					find_receiver(i, j);
+	for(i=0;i<ndev;i++) {
+		if(scan_index >= 0 && i != scan_index)
+			continue;
+		if(bypass[i])
+			continue;
+		for(j=0;j<bslen[i];j++) {
+			if(!bsc_clk[i][j] && !bsextr[i][j] && bsname[i][j] && strchr("OYZ",bsmode[i][j])) {
+				find_receiver(i, j);
+			}
+		}
+	}
 }
 
 void probe_output(int ci, int cj)
@@ -812,8 +819,9 @@ void usage(void)
 	fprintf(stderr, "  Command/Options\n");
 	fprintf(stderr, "    clocks-extest  use only extest when checking for clocks\n");
 	fprintf(stderr, "    clocks-sample  use only sample when checking for clocks\n");
-	fprintf(stderr, "    scan-extest    use only extest when scanning\n");
 	fprintf(stderr, "    iprobe-group   probe input groups\n");
+	fprintf(stderr, "    scan-extest    use only extest when scanning\n");
+	fprintf(stderr, "    scan-index n   scan only specified index as outputs\n");
 	fprintf(stderr, "  Options\n");
 	fprintf(stderr, "    speed n        set JTAG speed - default 1, higher is slower\n");
 }
@@ -831,6 +839,7 @@ int main(int argc, char *argv[])
 	clock_use_extest = 0;
 	clock_use_sample = 0;
 	scan_use_extest = 0;
+	scan_index = -1;
 	iprobe_group = 0;
 	
 	if(argc < 2) {
@@ -852,16 +861,28 @@ int main(int argc, char *argv[])
 			clock_use_extest = 0;
 			clock_use_sample = 1;
 			have_cmd = 1;
-		} else if(!strcmp(argv[i], "scan-extest")){
-			do_scan_clock = 1;
-			scan_use_extest = 1;
-			do_scan_chain = 1;
-			have_cmd = 1;
 		} else if(!strcmp(argv[i], "iprobe-group")){
 			do_scan_clock = 1;
 			do_iprobe = 1;
 			iprobe_group = 1;
 			have_cmd = 1;
+		} else if(!strcmp(argv[i], "scan-extest")){
+			do_scan_clock = 1;
+			scan_use_extest = 1;
+			do_scan_chain = 1;
+			have_cmd = 1;
+		} else if(!strcmp(argv[i], "scan-index") && i+1 < argc){
+			do_scan_clock = 1;
+			scan_use_extest = 1;
+			do_scan_chain = 1;
+			have_cmd = 1;
+			i++;
+			k = sscanf(argv[i], "%d", &scan_index);
+			if (k == 0 || scan_index < 0) {
+				fprintf(stderr, "Invalid index\n");
+				usage();
+				return 0;
+			}
 		} else if(!strcmp(argv[i], "clocks")){
 			do_scan_clock = 1;
 			have_cmd = 1;
@@ -880,7 +901,7 @@ int main(int argc, char *argv[])
 		} else if(!strcmp(argv[i], "speed") && i+1 < argc){
 			i++;
 			k = sscanf(argv[i], "%d", &speed);
-			if(k == 0) {
+			if(k == 0 || speed <= 0) {
 				fprintf(stderr, "Invalid speed\n");
 				usage();
 				return 0;
