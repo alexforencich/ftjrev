@@ -16,6 +16,10 @@ compatible with FT2232 based JTAG cables.
 This version of ftjrev is a modified version of the one released by NSA@home
 on this page: http://nsa.unaligned.org/jrev.php .  
 
+## Requirements
+
+* libftdi
+
 ## Installation
 
 To build ftjrev, extract and run
