@@ -320,13 +320,13 @@ void statewalk(uint8_t tms, int l, int tdi)
 	buf[0] = MPSSE_WRITE_TMS|MPSSE_LSB|MPSSE_BITMODE|MPSSE_WRITE_NEG;
 	buf[1] = l-1;
 	buf[2] = (tdi<<7)|tms;
-	if(ftdi_write_data(&ctx, buf, 3)<0)
+	if(ftdi_write_data(&ctx, buf, 3) != 3)
 		fprintf(stderr, "write error\n");
 }
 
 void reset(void)
 {
-	statewalk(0x1F, 6, 0);
+	statewalk(0x3E, 7, 0);
 }
 
 void cap_dr(void)
