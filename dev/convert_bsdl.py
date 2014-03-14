@@ -101,11 +101,11 @@ def main(argv=None):
 
     # tristate outputs
 
-    pins = re.sub("^\s+\"\s*(\d+).*BC_\d,\s+(\S+),\s+output3,\s+X,\s+(\d+)+,\s+(\d).+$", "bsc[\g<1>] \g<2> Y\g<4> \g<3>", pins, flags=re.M)
+    pins = re.sub("^\s+\"\s*(\d+).*BC_\d,\s+(\S+),\s+(output3|bidir),\s+X,\s+(\d+)+,\s+(\d).+$", "bsc[\g<1>] \g<2> Y\g<5> \g<4>", pins, flags=re.M|re.I)
 
     # inputs
 
-    pins = re.sub("^\s+\"\s*(\d+).*BC_\d,\s+(\S+),\s+input,.+$", "bsc[\g<1>] \g<2> I", pins, flags=re.M)
+    pins = re.sub("^\s+\"\s*(\d+).*BC_\d,\s+(\S+),\s+input,.+$", "bsc[\g<1>] \g<2> I", pins, flags=re.M|re.I)
 
     ofp.write(pins)
     ofp.write('\n')
