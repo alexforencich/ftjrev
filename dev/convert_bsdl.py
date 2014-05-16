@@ -96,20 +96,20 @@ def main(argv=None):
 
     # remove non-pin entries
 
-    pins = re.sub("^\s+\"\s*(\d+).*BC_\d,\s+\*.+$", "", pins, flags=re.M)
+    pins = re.sub("^\s*\"\s*(\d+).*BC_\d,\s+\*.+$", "", pins, flags=re.M)
     pins = re.sub("^\s*--.+$", "", pins, flags=re.M)
 
     # non-tristate outputs
 
-    pins = re.sub("^\s+\"\s*(\d+).*(A|B)C_\d,\s+(\S+),\s+(output2),.+$", "bsc[\g<1>] \g<3> O", pins, flags=re.M|re.I)
+    pins = re.sub("^\s*\"\s*(\d+).*(A|B)C_\d,\s+(\S+),\s+(output2),.+$", "bsc[\g<1>] \g<3> O", pins, flags=re.M|re.I)
 
     # tristate outputs
 
-    pins = re.sub("^\s+\"\s*(\d+).*(A|B)C_\d,\s+(\S+),\s+(output3|bidir),\s+X,\s+(\d+)+,\s+(\d).+$", "bsc[\g<1>] \g<3> Y\g<6> \g<5>", pins, flags=re.M|re.I)
+    pins = re.sub("^\s*\"\s*(\d+).*(A|B)C_\d,\s+(\S+),\s+(output3|bidir),\s+X,\s+(\d+)+,\s+(\d).+$", "bsc[\g<1>] \g<3> Y\g<6> \g<5>", pins, flags=re.M|re.I)
 
     # inputs
 
-    pins = re.sub("^\s+\"\s*(\d+).*(A|B)C_\d,\s+(\S+),\s+(input|observe_only),.+$", "bsc[\g<1>] \g<3> I", pins, flags=re.M|re.I)
+    pins = re.sub("^\s*\"\s*(\d+).*(A|B)C_\d,\s+(\S+),\s+(input|observe_only),.+$", "bsc[\g<1>] \g<3> I", pins, flags=re.M|re.I)
 
     # remove blank lines
 
