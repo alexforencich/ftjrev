@@ -1,0 +1,112 @@
+name CY7C2644KV18
+irsize 3
+bssize 109
+sample 100
+extest 000
+bsc[0] ODT I
+bsc[1] QVLD O
+bsc[2] A(0) I
+bsc[3] A(1) I
+bsc[4] A(2) I
+bsc[5] A(3) I
+bsc[6] A(4) I
+bsc[7] A(5) I
+bsc[8] A(6) I
+bsc[9] Q(0) Y0 108
+bsc[10] D(0) I
+bsc[11] D(9) I
+bsc[12] Q(9) Y0 108
+bsc[13] Q(1) Y0 108
+bsc[14] D(1) I
+bsc[15] D(10) I
+bsc[16] Q(10) Y0 108
+bsc[17] Q(2) Y0 108
+bsc[18] D(2) I
+bsc[19] D(11) I
+bsc[20] Q(11) Y0 108
+bsc[21] Q(3) Y0 108
+bsc[22] D(3) I
+bsc[23] D(12) I
+bsc[24] Q(12) Y0 108
+bsc[25] Q(4) Y0 108
+bsc[26] D(4) I
+bsc[27] ZQ I
+bsc[28] D(13) I
+bsc[29] Q(13) Y0 108
+bsc[30] Q(5) Y0 108
+bsc[31] D(5) I
+bsc[32] D(14) I
+bsc[33] Q(14) Y0 108
+bsc[34] Q(6) Y0 108
+bsc[35] D(6) I
+bsc[36] D(15) I
+bsc[37] Q(15) Y0 108
+bsc[38] Q(7) Y0 108
+bsc[39] D(7) I
+bsc[40] D(16) I
+bsc[41] Q(16) Y0 108
+bsc[42] Q(8) Y0 108
+bsc[43] D(8) I
+bsc[44] D(17) I
+bsc[45] Q(17) Y0 108
+bsc[46] CQ O
+bsc[47] A(7) I
+bsc[48] A(8) I
+bsc[49] A(9) I
+bsc[50] A(10) I
+bsc[51] A(11) I
+bsc[52] RPS_n I
+bsc[53] BW1_n I
+bsc[54] BW0_n I
+bsc[55] K I
+bsc[56] K_n I
+bsc[57] BW3_n I
+bsc[58] BW2_n I
+bsc[59] WPS_n I
+bsc[60] A(12) I
+bsc[61] A(13) I
+bsc[62] A(14) I
+bsc[64] CQ_n O
+bsc[65] Q(18) Y0 108
+bsc[66] D(18) I
+bsc[67] D(27) I
+bsc[68] Q(27) Y0 108
+bsc[69] Q(19) Y0 108
+bsc[70] D(19) I
+bsc[71] D(28) I
+bsc[72] Q(28) Y0 108
+bsc[73] Q(20) Y0 108
+bsc[74] D(20) I
+bsc[75] D(29) I
+bsc[76] Q(29) Y0 108
+bsc[77] Q(21) Y0 108
+bsc[78] D(21) I
+bsc[79] D(30) I
+bsc[80] Q(30) Y0 108
+bsc[81] Q(22) Y0 108
+bsc[82] D(22) I
+bsc[83] DOFF_N I
+bsc[84] D(31) I
+bsc[85] Q(31) Y0 108
+bsc[86] Q(23) Y0 108
+bsc[87] D(23) I
+bsc[88] D(32) I
+bsc[89] Q(32) Y0 108
+bsc[90] Q(24) Y0 108
+bsc[91] D(24) I
+bsc[92] D(33) I
+bsc[93] Q(33) Y0 108
+bsc[94] Q(25) Y0 108
+bsc[95] D(25) I
+bsc[96] D(34) I
+bsc[97] Q(34) Y0 108
+bsc[98] Q(26) Y0 108
+bsc[99] D(26) I
+bsc[100] D(35) I
+bsc[101] Q(35) Y0 108
+bsc[102] A(15) I
+bsc[103] A(16) I
+bsc[104] A(17) I
+bsc[105] A(18) I
+bsc[106] A(19) I
+bsc[107] A(20) I
